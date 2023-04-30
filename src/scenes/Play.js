@@ -74,7 +74,7 @@ class Play extends Phaser.Scene{ //creating js class 'menu' that extends phaser'
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← to Menu', scoreConfig).setOrigin(0.5);
             //display high score
-            this.add.text(game.config.width/2, game.config.height/2 + 128, 'High Score: ' + this.game.config.highScore, scoreConfig).setOrigin(0.5);
+            this.add.text(game.config.width/2, game.config.height/2 + 128, 'High Score: ' + game.config.highScore, scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
 
@@ -134,7 +134,7 @@ class Play extends Phaser.Scene{ //creating js class 'menu' that extends phaser'
         // Saving high score
         if (this.p1Score > this.game.config.highScore)
         {
-          this.game.config.highScore = this.p1Score;
+          game.config.highScore = this.p1Score;
         }
         this.sound.play('sfx_explosion');
       }

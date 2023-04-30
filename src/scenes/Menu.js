@@ -9,6 +9,7 @@ class Menu extends Phaser.Scene{ //creating js class 'menu' that extends phaser'
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('bgm', './assets/scifi.mp3');
     }
       
     create(){
@@ -26,7 +27,8 @@ class Menu extends Phaser.Scene{ //creating js class 'menu' that extends phaser'
             },
             fixedWidth: 0
         }
-        
+        this.sound.play('bgm');
+
         // show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2, 'Use ←→ arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
